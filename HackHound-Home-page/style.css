@@ -1,0 +1,464 @@
+*::before,
+*::after {
+    box-sizing: border-box;
+    line-height: 1.5em;
+}
+
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar{
+    width: 6px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+/* optional: show position indicator in black */
+::-webkit-scrollbar-thumb {
+    background: #2d1258;
+}
+
+*::selection {
+    background-color: #2d1258;
+    color: white;
+}
+
+
+* {
+  font-family: 'Roboto', sans-serif;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+
+.nav {
+  height: 50px;
+  width: 100%;
+  background-color: #333;
+  position: relative;
+}
+
+.nav > .nav-header {
+  display: inline;
+}
+
+.nav > .nav-header > .nav-title {
+  display: inline-block;
+  font-size: 22px;
+  color: #fff;
+  padding: 10px 10px 10px 30px;
+}
+
+.nav > .nav-btn {
+  display: none;
+}
+
+.nav > .nav-links {
+  display: inline;
+  float: right;
+  margin-right: 40px;
+  font-size: 18px;
+}
+
+.nav > .nav-links > a {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  text-decoration: none;
+  color: #efefef;
+}
+
+.nav > .nav-links > a:hover {
+  border-bottom: 3.5px solid #ffffff;
+  transition: .2s;
+}
+
+.nav > #nav-check {
+  display: none;
+}
+
+@media (max-width:600px) {
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .nav > .nav-btn > label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+  }
+  .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid #eee;
+  }
+  .nav > .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #333;
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
+  }
+  .nav > .nav-links > a {
+    display: block;
+    width: 100%;
+  }
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .nav > #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+}
+
+
+.front-image{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url(front-image.jpg);
+  height: 100vh;
+  width: 100%;
+  /* Image is centered vertically and horizontally at all times */
+  background-position: center center;
+  background-attachment: fixed;
+  /* Image doesn't repeat */
+  background-repeat: no-repeat;
+  background-size: cover;
+ 
+  z-index: -1;
+}
+
+/* For mobile devices */
+@media only screen and (max-width: 767px) {
+  .front-image{
+    /* The file size of this background image is 93% smaller
+     * to improve page load speed on mobile internet connections */
+     background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url(front-image.jpg);
+  }
+    }
+
+.centered-texts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  height: 100vh;
+  color: white; /* Adjust the height as needed */
+}
+
+.large-text{
+  font-size: 100px;
+}
+
+@media only screen and (max-width: 767px) {
+  .large-text{
+    font-size: 9vw;
+  }
+}
+
+.small-text{
+  font-size: 24px;
+  text-align: center;
+  padding: 0px 10px 0px 10px;
+}
+
+@media only screen and (max-width: 767px) {
+  .small-text{
+    font-size: 3vw;
+  }
+}
+
+
+.main-heading{
+  color: #000000;
+  font-size: 60px;
+  font-weight: 600;
+  margin-top: 120px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+@media only screen and (max-width: 767px) {
+  .main-heading{
+    font-size: 8vw;
+    margin-top: 50px;
+    margin-bottom: 0px;
+  }
+}
+
+
+.main-para{
+  color: #000000;
+  padding: 40px;
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 100px;
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+}
+
+@media only screen and (max-width: 767px) {
+  .main-para{
+    font-size: 2vw;
+    margin-top: 0px;
+    padding: 20px;
+  }
+}
+
+
+
+.container{
+  display: grid;
+  width: 100%;
+  gap: 40px;
+  grid-template-columns: 40% 60%;
+  padding: 140px 50px 50px 50px;
+}
+
+@media only screen and (max-width: 600px) {
+  .container{
+    grid-template-columns: 100%;
+    padding: 140px 20px 20px 20px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .container{
+    grid-template-columns: 100%;
+    padding:  70px 20px 20px 20px;
+  }
+}
+
+.manage-img{
+  width: 100%;
+  background-image: url("logo.jpeg");
+  height: 500px;
+  /* Image is centered vertically and horizontally at all times */
+  background-position: center center;
+  /* Image doesn't repeat */
+  background-repeat: no-repeat;
+  background-size: 100%, 100%;
+ 
+}
+
+
+
+.sub-heading{
+  color: #000000;
+  font-size: 60px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+@media only screen and (max-width: 767px) {
+  .sub-heading{
+    font-size: 8vw;
+    margin-top: 40px;
+    margin-bottom: 0px;
+  }
+}
+
+.sub-heading-2{
+  color: #000000;
+  font-size: 60px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 100px;
+  font-family: 'Roboto', sans-serif;
+}
+
+@media only screen and (max-width: 1190px) {
+  .sub-heading-2{
+    font-size: 8vw;
+    margin-top: 40px;
+    margin-bottom: 50px;
+  }
+}
+
+
+.sub-para{
+  color: #000000;
+  padding: 40px;
+  font-size: 16px;
+  word-spacing: 2px;
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+}
+
+@media only screen and (max-width: 767px) {
+  .sub-para{
+    font-size: 2vw;
+    margin-top: 0px;
+    padding: 10px;
+  }
+}
+
+
+/*font awesome display in one line*/
+.topnav{
+  list-style-type: none;
+  margin-top: 150px;
+  margin-bottom: 50px;
+  padding: 0px;
+  overflow: hidden;
+  word-spacing: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+  .topnav{
+    margin-top: 60px;
+  }
+}
+
+
+@media screen and (max-width: 500px){
+  .topnav{
+      word-spacing: 0px;
+  }
+}
+
+.topnv{
+  text-align: center;
+}
+
+.topnv a{
+  display: inline;
+  text-align: center;
+  color: black;
+  padding: 10px;
+  text-decoration: none;
+}
+
+/*some font-awesome*/
+.fa-github{
+    color: #2b3137;
+}
+
+.fa-github:hover{
+  transition: .5s;
+  transform: rotate(360deg);
+}
+
+
+.fa-twitter{
+  color: #0084b4;
+
+}
+
+.fa-twitter:hover{
+  transition: .5s;
+  transform: rotate(360deg);
+}
+
+.fa-linkedin{
+  color: #0077B5;
+  
+
+}
+
+.fa-linkedin:hover{
+  transition: .5s;
+  transform: rotate(360deg);
+}
+
+.fa-youtube{
+  color: #FF0000;
+
+}
+
+.fa-youtube:hover{
+  transition: .5s;
+  transform: rotate(360deg);
+}
+
+
+
+.menu li {
+  list-style: none;
+  text-align: center;
+}
+
+
+li a {
+  transform: translateY(-10px);
+}
+
+.menu li a {
+  font-size: 18px;
+  color: black;
+  margin: 25px 10px;
+  display: inline-block;
+  text-decoration: none;
+  opacity: 0.75;
+  transition: 0.5s;
+  font-weight: bold;
+}
+
+.slider-container {
+  position: relative;
+
+  width: 80%;
+  margin: 0 auto;
+}
+
+.slider {
+  display: flex;
+  overflow-x: hidden;
+}
+
+.slider img {
+  width: 100%;
+  height: auto;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 25px;
+  height: 150px;
+  z-index: 1;
+  transition: .5s;
+}
+
+@media only screen and (max-width: 767px) {
+  .prev, .next{
+    padding: 10px;
+    height: 50px;
+  }
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #000000;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+
